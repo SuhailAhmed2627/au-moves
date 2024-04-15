@@ -1,0 +1,28 @@
+.pTitle {
+  color: white;
+  margin-top: 7rem;
+  margin-left: 120px;
+  margin-bottom: 5rem;
+}
+.paymentContainer {
+  max-height: 360px;
+  overflow: scroll;
+}
+
+.ridesPaymentDisplay {
+  background-color: rgb(224, 224, 224);
+  border-radius: 5%;
+  width: 300px;
+  margin-bottom: 1rem;
+  margin-left: 28px;
+  padding: 1rem;
+}
+
+.payNowButton {
+  margin-left: 85px;
+  padding: 0.25rem;
+  background-color: #f29224;
+  color: white;
+  border-color: #f29224;
+  width: 100px;
+}

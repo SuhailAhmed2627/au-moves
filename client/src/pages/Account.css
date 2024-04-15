@@ -1,0 +1,77 @@
+.name {
+  margin-top: 3rem;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: white;
+  text-align: center;
+}
+
+.switch-field-rides {
+  margin-top: 40px;
+  margin-left: 60px;
+  margin-bottom: 4.35rem;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+.switch-field-rides input {
+  position: absolute !important;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  width: 1px;
+  border: 0;
+  overflow: hidden;
+}
+
+.switch-field-rides label {
+  background-color: #e4e4e4;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+  line-height: 1;
+  text-align: center;
+  padding: 8px 16px;
+  margin-right: -1px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow:
+    inset 0 1px 3px rgba(0, 0, 0, 0.3),
+    0 1px rgba(255, 255, 255, 0.1);
+  transition: all 0.1s ease-in-out;
+}
+
+.switch-field-rides input:checked + label {
+  background-color: #f1a854;
+  font-weight: bold;
+  box-shadow: none;
+}
+
+.switch-field label:first-of-type {
+  border-radius: 4px 0 0 4px;
+}
+
+.switch-field label:last-of-type {
+  border-radius: 0 4px 4px 0;
+}
+
+.ridesContainer {
+  max-height: 360px;
+  overflow: scroll;
+}
+
+.ridesDisplay {
+  background-color: rgb(224, 224, 224);
+  border-radius: 5%;
+  width: 300px;
+  margin-bottom: 1rem;
+  margin-left: 28px;
+  padding: 1rem;
+}
+
+.cancelButton {
+  margin-left: 85px;
+  padding: 0.25rem;
+  background-color: #27aae2;
+  color: white;
+  border-color: #27aae2;
+  width: 100px;
+}

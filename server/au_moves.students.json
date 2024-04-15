@@ -1,0 +1,480 @@
+[{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f4725"
+  },
+  "names": "student1",
+  "username": "student1",
+  "password": "1234",
+  "longitude": 55.391301278824734,
+  "latitude": 25.34697597596781,
+  "emirate": "Sharjah",
+  "phone_number": "551234561"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f4726"
+  },
+  "names": "student2",
+  "username": "student2",
+  "password": "1234",
+  "longitude": 55.39018547987454,
+  "latitude": 25.35880450646387,
+  "emirate": "Sharjah",
+  "phone_number": "551234562"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f4727"
+  },
+  "names": "student3",
+  "username": "student3",
+  "password": "1234",
+  "longitude": 55.396751527542996,
+  "latitude": 25.356787920791387,
+  "emirate": "Sharjah",
+  "phone_number": "551234563"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f4728"
+  },
+  "names": "student4",
+  "username": "student4",
+  "password": "1234",
+  "longitude": 55.397781495804715,
+  "latitude": 25.362682461285583,
+  "emirate": "Sharjah",
+  "phone_number": "551234564"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f4729"
+  },
+  "names": "student5",
+  "username": "student5",
+  "password": "1234",
+  "longitude": 55.40765202497952,
+  "latitude": 25.35981278668572,
+  "emirate": "Sharjah",
+  "phone_number": "551234565"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f472a"
+  },
+  "names": "student6",
+  "username": "student6",
+  "password": "1234",
+  "longitude": 55.39906895613186,
+  "latitude": 25.36892570713547,
+  "emirate": "Sharjah",
+  "phone_number": "551234566"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f472b"
+  },
+  "names": "student7",
+  "username": "student7",
+  "password": "1234",
+  "longitude": 55.40241635298245,
+  "latitude": 25.370127785764577,
+  "emirate": "Sharjah",
+  "phone_number": "551234567"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f472c"
+  },
+  "names": "student8",
+  "username": "student8",
+  "password": "1234",
+  "longitude": 55.399026040787625,
+  "latitude": 25.37633187240065,
+  "emirate": "Sharjah",
+  "phone_number": "551234568"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f472d"
+  },
+  "names": "student9",
+  "username": "student9",
+  "password": "1234",
+  "longitude": 55.3927174851846,
+  "latitude": 25.364970396273304,
+  "emirate": "Sharjah",
+  "phone_number": "551234569"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f472e"
+  },
+  "names": "student10",
+  "username": "student10",
+  "password": "1234",
+  "longitude": 55.401300554032254,
+  "latitude": 25.3632641437782,
+  "emirate": "Sharjah",
+  "phone_number": "551234510"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f472f"
+  },
+  "names": "student11",
+  "username": "student11",
+  "password": "1234",
+  "longitude": 55.305955493445005,
+  "latitude": 25.25628798393513,
+  "emirate": "Dubai",
+  "phone_number": "551234511"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f4730"
+  },
+  "names": "student12",
+  "username": "student12",
+  "password": "1234",
+  "longitude": 55.28582819699725,
+  "latitude": 25.249961301040727,
+  "emirate": "Dubai",
+  "phone_number": "551234512"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f4731"
+  },
+  "names": "student13",
+  "username": "student13",
+  "password": "1234",
+  "longitude": 55.29213675260028,
+  "latitude": 25.26203217128615,
+  "emirate": "Dubai",
+  "phone_number": "551234513"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f4732"
+  },
+  "names": "student14",
+  "username": "student14",
+  "password": "1234",
+  "longitude": 55.280738939086596,
+  "latitude": 25.241328080749824,
+  "emirate": "Dubai",
+  "phone_number": "551234514"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f4733"
+  },
+  "names": "student15",
+  "username": "student15",
+  "password": "1234",
+  "longitude": 55.26992427233855,
+  "latitude": 25.24746113430596,
+  "emirate": "Dubai",
+  "phone_number": "551234515"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f4734"
+  },
+  "names": "student16",
+  "username": "student16",
+  "password": "1234",
+  "longitude": 55.311723817626635,
+  "latitude": 25.237446241339406,
+  "emirate": "Dubai",
+  "phone_number": "551234516"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f4735"
+  },
+  "names": "student17",
+  "username": "student17",
+  "password": "1234",
+  "longitude": 55.323697198669116,
+  "latitude": 25.233176074801452,
+  "emirate": "Dubai",
+  "phone_number": "551234517"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f4736"
+  },
+  "names": "student18",
+  "username": "student18",
+  "password": "1234",
+  "longitude": 55.27663147902005,
+  "latitude": 25.21538814304282,
+  "emirate": "Dubai",
+  "phone_number": "551234518"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f4737"
+  },
+  "names": "student19",
+  "username": "student19",
+  "password": "1234",
+  "longitude": 55.25504506086819,
+  "latitude": 25.218882437862092,
+  "emirate": "Dubai",
+  "phone_number": "551234519"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f4738"
+  },
+  "names": "student20",
+  "username": "student20",
+  "password": "1234",
+  "longitude": 55.2458611772012,
+  "latitude": 25.207700341211915,
+  "emirate": "Dubai",
+  "phone_number": "551234520"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f4739"
+  },
+  "names": "student21",
+  "username": "student21",
+  "password": "1234",
+  "longitude": 55.45896048769938,
+  "latitude": 25.38310993760943,
+  "emirate": "Ajman",
+  "phone_number": "551234521"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f473a"
+  },
+  "names": "student22",
+  "username": "student22",
+  "password": "1234",
+  "longitude": 55.45591349825846,
+  "latitude": 25.38574642997198,
+  "emirate": "Ajman",
+  "phone_number": "551234522"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f473b"
+  },
+  "names": "student23",
+  "username": "student23",
+  "password": "1234",
+  "longitude": 55.451793625211586,
+  "latitude": 25.382644668275706,
+  "emirate": "Ajman",
+  "phone_number": "551234523"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f473c"
+  },
+  "names": "student24",
+  "username": "student24",
+  "password": "1234",
+  "longitude": 55.449819519376625,
+  "latitude": 25.382877303166655,
+  "emirate": "Ajman",
+  "phone_number": "551234524"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f473d"
+  },
+  "names": "student25",
+  "username": "student25",
+  "password": "1234",
+  "longitude": 55.45750136599528,
+  "latitude": 25.38512608400686,
+  "emirate": "Ajman",
+  "phone_number": "551234525"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f473e"
+  },
+  "names": "student26",
+  "username": "student26",
+  "password": "1234",
+  "longitude": 55.462307884549965,
+  "latitude": 25.38469959430705,
+  "emirate": "Ajman",
+  "phone_number": "551234526"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f473f"
+  },
+  "names": "student27",
+  "username": "student27",
+  "password": "1234",
+  "longitude": 55.458831741666664,
+  "latitude": 25.379465279851964,
+  "emirate": "Ajman",
+  "phone_number": "551234527"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f4740"
+  },
+  "names": "student28",
+  "username": "student28",
+  "password": "1234",
+  "longitude": 55.46093459353434,
+  "latitude": 25.37694497346146,
+  "emirate": "Ajman",
+  "phone_number": "551234528"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f4741"
+  },
+  "names": "student29",
+  "username": "student29",
+  "password": "1234",
+  "longitude": 55.46273703799235,
+  "latitude": 25.375161340238947,
+  "emirate": "Ajman",
+  "phone_number": "551234529"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f4742"
+  },
+  "names": "student30",
+  "username": "student30",
+  "password": "1234",
+  "longitude": 55.45737261996256,
+  "latitude": 25.37888367535268,
+  "emirate": "Ajman",
+  "phone_number": "551234530"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f4743"
+  },
+  "names": "student31",
+  "username": "student31",
+  "password": "1234",
+  "longitude": 56.00054092962277,
+  "latitude": 25.770793086931562,
+  "emirate": "Ras Al Khaimah",
+  "phone_number": "551234531"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f4744"
+  },
+  "names": "student32",
+  "username": "student32",
+  "password": "1234",
+  "longitude": 56.0033733423425,
+  "latitude": 25.77264812873355,
+  "emirate": "Ras Al Khaimah",
+  "phone_number": "551234532"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f4745"
+  },
+  "names": "student33",
+  "username": "student33",
+  "password": "1234",
+  "longitude": 55.99487610418332,
+  "latitude": 25.770561204667448,
+  "emirate": "Ras Al Khaimah",
+  "phone_number": "551234533"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f4746"
+  },
+  "names": "student34",
+  "username": "student34",
+  "password": "1234",
+  "longitude": 55.99212952215207,
+  "latitude": 25.779372412167607,
+  "emirate": "Ras Al Khaimah",
+  "phone_number": "551234534"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f4747"
+  },
+  "names": "student35",
+  "username": "student35",
+  "password": "1234",
+  "longitude": 55.995734411068085,
+  "latitude": 25.782309335920942,
+  "emirate": "Ras Al Khaimah",
+  "phone_number": "551234535"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f4748"
+  },
+  "names": "student36",
+  "username": "student36",
+  "password": "1234",
+  "longitude": 56.00466080266965,
+  "latitude": 25.779758853657885,
+  "emirate": "Ras Al Khaimah",
+  "phone_number": "551234536"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f4749"
+  },
+  "names": "student37",
+  "username": "student37",
+  "password": "1234",
+  "longitude": 56.00938149053586,
+  "latitude": 25.77697644683114,
+  "emirate": "Ras Al Khaimah",
+  "phone_number": "551234537"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f474a"
+  },
+  "names": "student38",
+  "username": "student38",
+  "password": "1234",
+  "longitude": 55.990756231136444,
+  "latitude": 25.768396948354606,
+  "emirate": "Ras Al Khaimah",
+  "phone_number": "551234538"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f474b"
+  },
+  "names": "student39",
+  "username": "student39",
+  "password": "1234",
+  "longitude": 55.993502813167694,
+  "latitude": 25.766155355568902,
+  "emirate": "Ras Al Khaimah",
+  "phone_number": "551234539"
+},
+{
+  "_id": {
+    "$oid": "6619c43cd1014c8ac53f474c"
+  },
+  "names": "student40",
+  "username": "student40",
+  "password": "1234",
+  "longitude": 55.9964210565759,
+  "latitude": 25.769015311328314,
+  "emirate": "Ras Al Khaimah",
+  "phone_number": "551234540"
+}]

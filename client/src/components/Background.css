@@ -1,0 +1,16 @@
+.background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Set a lower z-index to place it behind other elements */
+}
+
+.semi-circle {
+  margin-top: 0px;
+  margin-left: -20px;
+  width: 400px;
+  height: 13rem;
+  background-color: #27aae2;
+  border-radius: 0 0 40% 40%/0 0 80% 80%;
+  position: relative; /* Make sure it's relative to the container */
+}

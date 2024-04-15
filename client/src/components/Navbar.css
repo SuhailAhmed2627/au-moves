@@ -1,0 +1,48 @@
+.mobile-nav {
+  background: #ffffff;
+  position: fixed;
+  bottom: 0;
+  height: 70px;
+  width: 360px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.bloc-icon {
+  margin-top: 10px;
+  text-decoration: none;
+  color: #9b9b9b; /* Default color for unselected icons */
+  cursor: pointer;
+}
+
+.selected > svg {
+  fill: #f29224; /* Color for selected icon */
+}
+
+.selected > .payment-icon {
+  fill: #f1a854; /* Color for selected icon */
+}
+
+.bi {
+  margin-left: 23%;
+}
+
+.bi-calendar {
+  margin-left: 20%;
+}
+
+.bi-card-checklist {
+  margin-left: 20px;
+}
+
+.bi-geo-alt {
+  margin-left: 6px;
+}
+.payment-icon {
+  margin-top: -23px;
+  padding: 6px 12px;
+  background-color: #008efc;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}

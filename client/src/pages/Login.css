@@ -1,0 +1,83 @@
+:root {
+  --blue: #27aae2;
+  --white: #ffffff;
+  --ltgray: #f9f9f9;
+  --orange: #f29224;
+  --ltorange: #ffb35c;
+  --black: #333333;
+  --ltblack: #75716e;
+
+  --font-size: 1.3rem;
+  --mono: "Oxygen mono", monospace;
+  --sans: Oxygen, sans-serif;
+}
+
+.container {
+  width: 360px;
+  height: 650px;
+}
+
+.login-wrp {
+  max-width: 400px;
+  width: 100%;
+  margin: 0px auto;
+}
+.top {
+  background: var(--ltgray);
+  height: 360px;
+  position: relative;
+}
+.logo {
+  position: absolute;
+  max-width: 100px;
+  top: 28%;
+  left: 36%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+}
+.bottom {
+  background: var(--blue);
+  height: 300px;
+  position: relative;
+}
+.bottom .login-form {
+  background: #fff;
+  position: absolute;
+  box-shadow: 1px 1px 10px #999;
+  width: 90%;
+  top: -38%;
+  left: 5%;
+  border-radius: 5px;
+  padding: 50px 40px;
+}
+.btn {
+  border-radius: 30px;
+}
+.btn-primary {
+  background-color: var(--orange);
+  border-color: var(--orange);
+}
+
+.btn-primary:hover {
+  background-color: var(--ltorange) !important;
+  border-color: var(--ltorange) !important;
+}
+
+.checkbox-inline {
+  cursor: pointer;
+}
+.btn-link {
+  color: #999;
+  margin-top: 10px;
+  display: block;
+}
+.btn-link:hover,
+.btn-link:focus {
+  color: #777;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

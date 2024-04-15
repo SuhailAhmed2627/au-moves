@@ -1,0 +1,35 @@
+.bi-person {
+  width: 100px;
+  height: 100px;
+  fill: #f9f9f9;
+  margin-left: 125px;
+  margin-top: 50px;
+}
+
+.card {
+  margin-top: 100px;
+  width: 300px;
+  margin-left: 28px;
+}
+
+.card-title,
+.card-subtitle,
+p {
+  text-align: center;
+}
+
+.card-text {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.logout {
+  border-radius: 20px;
+  margin-top: 55px;
+  margin-left: 125px;
+  width: 100px;
+  height: 43px;
+  color: #ffffff;
+  background-color: #f29224;
+  border: #f29224;
+}
