@@ -87,16 +87,13 @@ const getAllRidesByTime_POST = async (req, res) => {
     const rides = await RideModel.find({
       time: time,
       completed: false,
-    }).populate(
-      "bookedBy",
-      "names latitude longitude",
-    ); // Populate the bookedBy field with the names, latitude and longitude of the student who booked the ride.
+    }).populate("bookedBy", "names latitude longitude"); // Populate the bookedBy field with the names, latitude and longitude of the student who booked the ride.
     return res.status(200).json(rides);
   } catch (error) {
     console.log(error);
     return res.status(500).json("Error retrieving rides");
   }
-}
+};
 
 const allocate_POST = async (req, res) => {
   try {
@@ -105,14 +102,15 @@ const allocate_POST = async (req, res) => {
     const ridesForSlot = await RideModel.find({
       time: new Date(time),
       driver: {
-        $ne: null
-      }
-    }).populate("bookedBy", "latitude longitude").populate("driver", "name");
+        $ne: null,
+      },
+    })
+      .populate("bookedBy", "latitude longitude")
+      .populate("driver", "name");
 
     const driverIdToRidesMap = {};
 
-    console.log(`Rides for slot `, ridesForSlot.length)
-
+    console.log(`Rides for slot `, ridesForSlot.length);
 
     for (const ride of ridesForSlot) {
       if (driverIdToRidesMap[ride.driver.name]) {
@@ -120,24 +118,27 @@ const allocate_POST = async (req, res) => {
       } else {
         driverIdToRidesMap[ride.driver.name] = [ride];
       }
-    };
+    }
 
     for (const [driverId, rides] of Object.entries(driverIdToRidesMap)) {
-      await DriverModel.findOneAndUpdate({
-        name: driverId
-      }, {
-        alloted: true
-      });
+      await DriverModel.findOneAndUpdate(
+        {
+          name: driverId,
+        },
+        {
+          alloted: true,
+        },
+      );
     }
 
     return res.status(200).json({
-      driverIdToRidesMap: driverIdToRidesMap
+      driverIdToRidesMap: driverIdToRidesMap,
     });
   } catch (error) {
     console.log(error);
     return res.status(500).json("Error retrieving rides");
   }
-}
+};
 
 const setPickUpTimeForRidesAndDeptTimeForDrivers_POST = async (req, res) => {
   try {
@@ -145,17 +146,20 @@ const setPickUpTimeForRidesAndDeptTimeForDrivers_POST = async (req, res) => {
 
     rides.forEach(async (ride) => {
       await RideModel.findByIdAndUpdate(ride.rideId, {
-        pickUpOrDropTime: ride.pickUpOrDropTime
+        pickUpOrDropTime: ride.pickUpOrDropTime,
       });
     });
 
     drivers.forEach(async (driver) => {
-      await DriverModel.findOneAndUpdate({
-        name: driver.driverId
-      }, {
-        departureTime: driver.departureTime,
-        link: driver.link
-      });
+      await DriverModel.findOneAndUpdate(
+        {
+          name: driver.driverId,
+        },
+        {
+          departureTime: driver.departureTime,
+          link: driver.link,
+        },
+      );
     });
 
     return res.status(200).json("Pick up time set for slot");
@@ -163,7 +167,7 @@ const setPickUpTimeForRidesAndDeptTimeForDrivers_POST = async (req, res) => {
     console.log(error);
     return res.status(500).json("Error in setting pickup time for slot");
   }
-}
+};
 
 export {
   login_POST,
@@ -173,5 +177,5 @@ export {
   getAllEvents_GET,
   getAllRidesByTime_POST,
   allocate_POST,
-  setPickUpTimeForRidesAndDeptTimeForDrivers_POST
+  setPickUpTimeForRidesAndDeptTimeForDrivers_POST,
 };

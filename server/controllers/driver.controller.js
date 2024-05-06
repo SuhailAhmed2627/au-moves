@@ -3,6 +3,7 @@ import jwt from "jsonwebtoken";
 import { DriverModel } from "../models/DriverModel.js";
 import { RideModel } from "../models/RideModel.js";
 import { getDriver } from "../utils/getDriver.js";
+import { EventModel } from "../models/EventModel.js";
 
 const login_POST = async (req, res) => {
   try {
@@ -80,11 +81,18 @@ const getDriverStatus_GET = async (req, res) => {
     if (!driver) {
       return res.status(404).json("Driver not found");
     }
+
+    const eventsForDriver = await EventModel.find({
+      driver: driver._id,
+      completed: false,
+    });
+
     const status = {
       alloted: driver.alloted,
       available: driver.available,
       departureTime: driver.departureTime,
-    }
+      events: eventsForDriver,
+    };
 
     return res.status(200).json(status);
   } catch (error) {
@@ -109,7 +117,7 @@ const getRidesData_GET = async (req, res) => {
         _id: ride._id,
         pickedUpOrDropped: ride.pickedUpOrDropped,
         bookedBy: ride.bookedBy,
-      }
+      };
     });
 
     return res.status(200).json({
@@ -120,7 +128,7 @@ const getRidesData_GET = async (req, res) => {
     console.log(error);
     res.status(500).json("Some error occurred");
   }
-}
+};
 
 const startRide_GET = async (req, res) => {
   try {
@@ -138,7 +146,7 @@ const startRide_GET = async (req, res) => {
     console.log(error);
     res.status(500).json("Some error occurred");
   }
-}
+};
 
 const endRide_GET = async (req, res) => {
   try {
@@ -147,12 +155,15 @@ const endRide_GET = async (req, res) => {
       return res.status(404).json("Driver not found");
     }
 
-    await RideModel.updateMany({
-      driver: driver._id,
-      completed: false,
-    }, {
-      completed: true,
-    });
+    await RideModel.updateMany(
+      {
+        driver: driver._id,
+        completed: false,
+      },
+      {
+        completed: true,
+      },
+    );
 
     driver.available = true;
     driver.alloted = false;
@@ -165,7 +176,7 @@ const endRide_GET = async (req, res) => {
     console.log(error);
     res.status(500).json("Some error occurred");
   }
-}
+};
 
 const pickUpStudent_POST = async (req, res) => {
   try {
@@ -193,17 +204,15 @@ const pickUpStudent_POST = async (req, res) => {
         _id: ride._id,
         pickedUpOrDropped: ride.pickedUpOrDropped,
         bookedBy: ride.bookedBy,
-      }
+      };
     });
 
-    return res.status(200).json(
-      ridesData,
-    );
+    return res.status(200).json(ridesData);
   } catch (error) {
     console.log(error);
     res.status(500).json("Some error occurred");
   }
-}
+};
 
 const getLink_GET = async (req, res) => {
   try {
@@ -215,11 +224,56 @@ const getLink_GET = async (req, res) => {
     return res.status(200).json({
       link: driver.link,
     });
-
   } catch (error) {
     console.log(error);
     res.status(500).json("Some error occurred");
   }
-}
+};
 
-export { endRide_GET, login_POST, profile_GET, getDriverRides_GET, setDriverAvailability, getDriverStatus_GET, getRidesData_GET, startRide_GET, pickUpStudent_POST, getLink_GET };
+const getFreeDrivers_GET = async (req, res) => {
+  try {
+    const drivers = await DriverModel.find({ available: true, alloted: false });
+    return res.status(200).json(drivers);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json("Some error occurred");
+  }
+};
+
+const completeEvent_GET = async (req, res) => {
+  try {
+    const driver = await getDriver(req);
+    if (!driver) {
+      return res.status(404).json("Driver not found");
+    }
+
+    const updateEvent = await EventModel.updateOne(
+      { driver: driver._id, completed: false },
+      { completed: true },
+    );
+
+    driver.available = true;
+    driver.alloted = false;
+
+    await driver.save();
+
+    return res.status(200).json("Event marked as completed");
+  } catch (error) {
+    console.log(error);
+    res.status(500).json("Error completing event");
+  }
+};
+
+export {
+  endRide_GET,
+  login_POST,
+  profile_GET,
+  getDriverRides_GET,
+  setDriverAvailability,
+  getDriverStatus_GET,
+  getRidesData_GET,
+  startRide_GET,
+  pickUpStudent_POST,
+  getLink_GET,
+  getFreeDrivers_GET,
+};

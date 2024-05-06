@@ -24,7 +24,7 @@ const RideSchema = new mongoose.Schema({
   pickUpOrDropTime: {
     type: Date,
     default: null,
-  }
+  },
 });
 const RideModel = mongoose.model("rides", RideSchema);
 

@@ -1,31 +1,82 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import axios from "axios";
 import "./Account.css";
 
-function SecretaryAccount() {
-  const [profile, setProfile] = useState(null); //profile is initially null, set after fetching from server
+const SecretaryAccount = () => {
+  const [events, setEvents] = useState([]);
+  const [event, setEvent] = useState("");
+  const [time, setTime] = useState("");
 
-  //after rendering for the first time, the function in useEffect will take place
+  const createEvent = useCallback(async () => {
+    const token = localStorage.getItem("token");
+
+    const result = await axios.post(
+      "http://localhost:3000/event/book",
+      { event, time },
+      { headers: { authorization: token } },
+    );
+
+    if (result.status === 200) {
+      setEvents([...events, result.data]);
+    } else {
+      alert("Error creating event");
+    }
+  }, [event, time]);
+
   useEffect(() => {
     const token = localStorage.getItem("token");
 
     const fetchFromServer = async () => {
-      const result = await axios.get(
-        "http://localhost:3000/secretary/profile",
-        {
-          //sending request from frontend to backend
-          headers: { authorization: token }, //setting headers with token
-        },
-      );
+      const result = await axios.get("http://localhost:3000/secretary/events", {
+        headers: { authorization: token },
+      });
 
-      const data = result.data; //json from server
-      setProfile(data);
+      const data = result.data;
+      setEvents(data);
     };
 
     fetchFromServer();
   }, []);
 
-  return <div>Hi Secretary</div>;
-}
+  if (!events) {
+    return <h2>Loading...</h2>;
+  }
+
+  return (
+    <div>
+      <h1>Secretary Account</h1>
+      <div>
+        <h2>Create Event</h2>
+        <input
+          value={event}
+          onChange={(e) => setEvent(e.target.value)}
+          type="text"
+          placeholder="Event"
+        />
+        <input
+          value={time}
+          onChange={(e) => setTime(e.target.value)}
+          type="datetime-local"
+        />
+        <button onClick={createEvent}>Create Event</button>
+      </div>
+      <div className="container">
+        {events.map((event) => (
+          <div key={event.id} className="card">
+            <h2>{event.event}</h2>
+            <p>{new Date(event.time).toLocaleString()}</p>
+            <p>{event.approved ? "Approved" : "Not Approved"}</p>
+            <p>{event.completed ? "Completed" : "Not Completed"}</p>
+            <p>
+              {event.driver
+                ? `Driver: ${event.driver.name}`
+                : "Driver not assigned"}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default SecretaryAccount;

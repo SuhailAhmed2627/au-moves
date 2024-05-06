@@ -21,6 +21,8 @@ import Background from "./components/Background";
 import LandingPage from "./pages/LandingPage";
 import AdminAccount from "./pages/AdminAccount";
 import SecretaryAccount from "./pages/SecretaryAccount";
+import AdminEvents from "./pages/AdminEvents";
+import AdminEventApproval from "./pages/AdminEventApproval";
 
 const App = () => {
   return (
@@ -61,6 +63,11 @@ const App = () => {
             element={<Navigate to="/adminHome/adminAccount" replace />}
           />
           <Route path="/adminHome/adminAccount" element={<AdminAccount />} />
+          <Route path="/adminHome/adminEvents" element={<AdminEvents />} />
+          <Route
+            path="/adminHome/adminEventApproval/:eventId"
+            element={<AdminEventApproval />}
+          />
         </Route>
         <Route path="/secretaryHome" element={<SecretaryHome />}>
           <Route

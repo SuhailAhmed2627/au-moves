@@ -52,7 +52,7 @@ const iterativeClustering = (studentLocations, numberOfClusters) => {
   let iterations = 1;
 
   while (clusters.some((cluster) => cluster.length < MIN_ELEMENTS_IN_CLUSTER)) {
-    console.log(`Iteration ${iterations}`)
+    console.log(`Iteration ${iterations}`);
     if (iterations > MAX_ITERATIONS) {
       throw new Error("Maximum iterations reached");
     }

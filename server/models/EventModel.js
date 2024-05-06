@@ -7,8 +7,8 @@ const EventSchema = new mongoose.Schema({
   completed: Boolean,
   bookedBy: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "students",
-  }, // The student who booked the event
+    ref: "secretary",
+  }, // The secretary who booked the event
   driver: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "drivers",

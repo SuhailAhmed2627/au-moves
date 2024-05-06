@@ -1,5 +1,11 @@
 import { Client } from "@googlemaps/google-maps-services-js";
-import { addSeconds, differenceInMinutes, subHours, subMinutes, subSeconds } from "date-fns";
+import {
+  addSeconds,
+  differenceInMinutes,
+  subHours,
+  subMinutes,
+  subSeconds,
+} from "date-fns";
 import { RideModel } from "../models/RideModel.js";
 
 const UNIVERSITY = {
@@ -75,9 +81,9 @@ const getDirectionsForTime = async (time, rides, client) => {
       mode: "driving",
       optimize: true,
       departureTime: time,
-    }
+    },
   });
-}
+};
 
 const calculateDuration = (directionsResponseData) => {
   let duration = 0;
@@ -85,13 +91,17 @@ const calculateDuration = (directionsResponseData) => {
     duration += leg.duration.value;
   });
   return duration;
-}
+};
 
 const getDirectionsForSlot = async (rides, slot, client) => {
   const arrivalTime = new Date(slot);
   const departureTime = subHours(new Date(slot), 3);
 
-  const directionsResponse0 = await getDirectionsForTime(departureTime, rides, client);
+  const directionsResponse0 = await getDirectionsForTime(
+    departureTime,
+    rides,
+    client,
+  );
 
   if (directionsResponse0.data.status !== "OK") {
     console.log("Error getting directions");
@@ -100,28 +110,37 @@ const getDirectionsForSlot = async (rides, slot, client) => {
 
   const directionsResponseData = directionsResponse0.data;
   const duration0 = calculateDuration(directionsResponseData);
-  if (differenceInMinutes(addSeconds(departureTime, duration0), arrivalTime) < 20) {
+  if (
+    differenceInMinutes(addSeconds(departureTime, duration0), arrivalTime) < 20
+  ) {
     return directionsResponseData;
   }
 
   const newDepartureTime = subMinutes(subSeconds(arrivalTime, duration0), 20);
 
-  const directionsResponse1 = await getDirectionsForTime(newDepartureTime, rides);
+  const directionsResponse1 = await getDirectionsForTime(
+    newDepartureTime,
+    rides,
+  );
   if (directionsResponse1.data.status !== "OK") {
     console.log("Error getting directions");
     return;
   }
 
   return directionsResponse1.data;
-}
+};
 
 const setPickUpTimeForDriver = async (driverId, rides, slot, client) => {
-  const directionsResponseData = await getDirectionsForSlot(rides, slot, client);
+  const directionsResponseData = await getDirectionsForSlot(
+    rides,
+    slot,
+    client,
+  );
   const arrivalTime = new Date(slot);
   const duration = calculateDuration(directionsResponseData);
 
   console.log(`directionsResponseData`, directionsResponseData);
-}
+};
 
 const setPickUpTimeForSlot = async (slot) => {
   const rides = await RideModel.find({
@@ -129,7 +148,9 @@ const setPickUpTimeForSlot = async (slot) => {
     driver: {
       $ne: null,
     },
-  }).populate("bookedBy", "latitude longitude").populate("driver", "name");
+  })
+    .populate("bookedBy", "latitude longitude")
+    .populate("driver", "name");
 
   const driverRidesObject = {};
 
@@ -146,10 +167,10 @@ const setPickUpTimeForSlot = async (slot) => {
   await client.elevation({
     params: {
       locations: [{ lat: 25.412264, lng: 55.506575 }],
-      key: "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg"
+      key: "AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg",
     },
     timeout: 1000, // milliseconds
-  })
+  });
 
   const temp = {};
 
@@ -164,7 +185,6 @@ const setPickUpTimeForSlot = async (slot) => {
   console.log(`temp`, temp);
 
   return temp;
-}
-
+};
 
 export { setPickUpTimeForSlot };

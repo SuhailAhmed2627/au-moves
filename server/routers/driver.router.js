@@ -1,6 +1,17 @@
-import { endRide_GET, login_POST, profile_GET, getLink_GET, getDriverStatus_GET, getRidesData_GET, startRide_GET, pickUpStudent_POST } from "../controllers/driver.controller.js";
+import {
+  endRide_GET,
+  login_POST,
+  profile_GET,
+  getLink_GET,
+  getDriverStatus_GET,
+  getRidesData_GET,
+  startRide_GET,
+  pickUpStudent_POST,
+  getFreeDrivers_GET,
+} from "../controllers/driver.controller.js";
 import { authMiddleware } from "../middlewares/auth.js";
 import { driverCheckMiddleware } from "../middlewares/driverCheck.js";
+import { adminCheckMiddleware } from "../middlewares/adminCheck.js";
 
 const driverRoutes = (app) => {
   app.post("/driver/login", login_POST);
@@ -34,10 +45,11 @@ const driverRoutes = (app) => {
     [authMiddleware, driverCheckMiddleware],
     pickUpStudent_POST,
   );
+  app.get("/driver/link", [authMiddleware, driverCheckMiddleware], getLink_GET);
   app.get(
-    "/driver/link",
-    [authMiddleware, driverCheckMiddleware],
-    getLink_GET,
+    "/driver/getFree",
+    [authMiddleware, adminCheckMiddleware],
+    getFreeDrivers_GET,
   );
 };
 

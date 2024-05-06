@@ -21,7 +21,7 @@ const DriverSchema = new mongoose.Schema({
   link: {
     type: String,
     default: null,
-  }
+  },
 });
 const DriverModel = mongoose.model("drivers", DriverSchema);
 

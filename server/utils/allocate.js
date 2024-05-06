@@ -1,6 +1,9 @@
 import { RideModel } from "../models/RideModel.js";
 import { DriverModel } from "../models/DriverModel.js";
-import { clusterWithMinimumElements, iterativeClustering } from "./clustering.js";
+import {
+  clusterWithMinimumElements,
+  iterativeClustering,
+} from "./clustering.js";
 
 /**
  * A controller function that handles the POST request to delete a ride.
@@ -56,7 +59,6 @@ const allocateDriversForSpecificSlot = async (slot) => {
     driver: null,
   }).populate("bookedBy", "latitude longitude");
 
-
   console.log(`Rides for slot ${slot}: ${rides.length}`);
 
   // Get all the drivers that are not alloted
@@ -77,7 +79,6 @@ const allocateDriversForSpecificSlot = async (slot) => {
   }));
 
   try {
-
     console.log(`Iterative clustering for slot ${slot} ===================`);
     // Get clusters of students based on their location
     const clusters = iterativeClustering(studentLocations, drivers.length);

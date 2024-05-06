@@ -16,7 +16,7 @@ const login_POST = async (req, res) => {
     }
 
     const token = jwt.sign(
-      { id: admin._id, userType: "secretary" },
+      { id: secretary._id, userType: "secretary" },
       SECRET_KEY,
     );
     res.json({ token });
@@ -44,11 +44,18 @@ const profile_GET = async (req, res) => {
 
 const getAllEvents_GET = async (req, res) => {
   try {
-    // Get all the events from the database
-    const events = await EventModel.find({})
-      .populate("bookedBy", "names") // Populate the bookedBy field with the names of the student who booked the event
-      .populate("driver", "name"); // Populate the driver field with the name of the driver
-    return res.status(200).json(events);
+    const secretaryId = req.id; //getting back line 72
+    const secretary = await SecretaryModel.findById(secretaryId); //find student document from database with ID
+
+    if (!secretary) {
+      return res.status(404).json("Secretary not found");
+    }
+
+    const eventsBookedBySecretary = await EventModel.find({
+      bookedBy: secretaryId,
+    }).populate("driver", "name");
+
+    return res.status(200).json(eventsBookedBySecretary);
   } catch (error) {
     console.log(error);
     res.status(500).json("Error retrieving events");

@@ -321,7 +321,7 @@ const createRide_POST = async (req, res) => {
     // send response to client
     return res.status(500).json("Internal server error");
   }
-}
+};
 
 export {
   book_POST,
@@ -329,5 +329,5 @@ export {
   getRide_POST,
   completeRide_POST,
   deleteRide_POST,
-  createRide_POST
+  createRide_POST,
 };

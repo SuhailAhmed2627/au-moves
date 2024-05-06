@@ -4,31 +4,39 @@ import {
   getEvent_POST,
   approveEvent_POST,
   assignDriver_POST,
+  getOpenEvents_GET,
 } from "../controllers/event.controller.js";
 import { authMiddleware } from "../middlewares/auth.js";
 import { studentCheckMiddleware } from "../middlewares/studentCheck.js";
+import { secretaryCheckMiddleware } from "../middlewares/secretaryCheck.js";
+import { adminCheckMiddleware } from "../middlewares/adminCheck.js";
 
 const eventRoutes = (app) => {
-  app.post("/event/book", [authMiddleware, studentCheckMiddleware], book_POST);
-  app.get(
-    "/event/getAll",
-    [authMiddleware, studentCheckMiddleware],
-    getAll_GET,
+  app.post(
+    "/event/book",
+    [authMiddleware, secretaryCheckMiddleware],
+    book_POST,
   );
+  app.get("/event/getAll", [authMiddleware, adminCheckMiddleware], getAll_GET);
   app.post(
     "/event/getEvent",
-    [authMiddleware, studentCheckMiddleware],
+    [authMiddleware, adminCheckMiddleware],
     getEvent_POST,
   );
   app.post(
     "/event/approve",
-    [authMiddleware, studentCheckMiddleware],
+    [authMiddleware, adminCheckMiddleware],
     approveEvent_POST,
   );
   app.post(
     "/event/assignDriver",
-    [authMiddleware, studentCheckMiddleware],
+    [authMiddleware, adminCheckMiddleware],
     assignDriver_POST,
+  );
+  app.get(
+    "/event/open",
+    [authMiddleware, studentCheckMiddleware],
+    getOpenEvents_GET,
   );
 };
 

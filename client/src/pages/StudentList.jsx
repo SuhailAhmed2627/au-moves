@@ -78,7 +78,7 @@ function StudentList() {
     );
 
     const data = result.data;
-    setRidesData(data.ridesData);
+    setRidesData(data);
   };
 
   return (

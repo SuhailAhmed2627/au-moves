@@ -3,6 +3,7 @@ import axios from "axios";
 import GoogleMapReact from "google-map-react";
 import classes from "./AdminAccount.module.css";
 import { getPickUpTimeForSlot } from "../../utils/drive.js";
+import { useNavigate } from "react-router-dom";
 
 const K_WIDTH = 40;
 const K_HEIGHT = 40;
@@ -72,6 +73,7 @@ function AdminAccount() {
   const [allocatedData, setAllocatedData] = useState(null);
   const [map, setMap] = useState(null);
   const [maps, setMaps] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -193,6 +195,12 @@ function AdminAccount() {
     <div className={classes.container}>
       <div className={classes.sidebar}>
         <h1>Hi Admin</h1>
+        <h2
+          style={{ cursor: "pointer" }}
+          onClick={() => navigate("/adminHome/adminEvents")}
+        >
+          View Events
+        </h2>
         <input
           type="date"
           placeholder="Select Date"

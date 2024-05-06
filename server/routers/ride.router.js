@@ -23,10 +23,7 @@ const rideRoutes = (app) => {
     studentCheckMiddleware,
     completeRide_POST,
   );
-  app.post(
-    "/ride/create",
-    createRide_POST,
-  );
+  app.post("/ride/create", createRide_POST);
 };
 
 export { rideRoutes };

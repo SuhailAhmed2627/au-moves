@@ -98,7 +98,9 @@ function Account() {
       <div className="ridesContainer">
         {rides && rides.length > 0 ? (
           rides.map((ride) =>
-            (showUpcoming ? !ride.completed : ride.completed) ? (
+            (
+              showUpcoming ? !ride.pickedUpOrDropped : ride.pickedUpOrDropped
+            ) ? (
               <div className="ridesDisplay" key={ride._id}>
                 <p>
                   <strong>Time:</strong> {new Date(ride.time).toLocaleString()}

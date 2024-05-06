@@ -1,98 +1,100 @@
-[{
-  "_id": {
-    "$oid": "6619c445d1014c8ac53f474e"
+[
+  {
+    "_id": {
+      "$oid": "6619c445d1014c8ac53f474e"
+    },
+    "username": "driver1",
+    "password": "1234",
+    "name": "Driver1",
+    "number": "551234561",
+    "number_plate": "A12345",
+    "available": true,
+    "alloted": false,
+    "departureTime": null,
+    "link": null
   },
-  "username": "driver1",
-  "password": "1234",
-  "name": "Driver1",
-  "number": "551234561",
-  "number_plate": "A12345",
-  "available": true,
-  "alloted": false,
-  "departureTime": null,
-  "link": null
-},
-{
-  "_id": {
-    "$oid": "6619c445d1014c8ac53f474f"
+  {
+    "_id": {
+      "$oid": "6619c445d1014c8ac53f474f"
+    },
+    "username": "driver2",
+    "password": "1234",
+    "name": "Driver2",
+    "number": "551234562",
+    "number_plate": "B9876",
+    "available": true,
+    "alloted": false,
+    "departureTime": null,
+    "link": null
   },
-  "username": "driver2",
-  "password": "1234",
-  "name": "Driver2",
-  "number": "551234562",
-  "number_plate": "B9876",
-  "available": true,
-  "alloted": false,
-  "departureTime": null,
-  "link": null
-},
-{
-  "_id": {
-    "$oid": "6619c445d1014c8ac53f4750"
+  {
+    "_id": {
+      "$oid": "6619c445d1014c8ac53f4750"
+    },
+    "username": "driver3",
+    "password": "1234",
+    "name": "Driver3",
+    "number": "551234563",
+    "number_plate": "C2345",
+    "available": true,
+    "alloted": false,
+    "departureTime": null,
+    "link": null
   },
-  "username": "driver3",
-  "password": "1234",
-  "name": "Driver3",
-  "number": "551234563",
-  "number_plate": "C2345",
-  "available": true,
-  "alloted": false,
-  "departureTime": null,
-  "link": null
-},
-{
-  "_id": {
-    "$oid": "6619c445d1014c8ac53f4751"
+  {
+    "_id": {
+      "$oid": "6619c445d1014c8ac53f4751"
+    },
+    "username": "driver4",
+    "password": "1234",
+    "name": "Driver4",
+    "number": "551234564",
+    "number_plate": "D4567",
+    "available": true,
+    "alloted": false,
+    "departureTime": null,
+    "link": null
   },
-  "username": "driver4",
-  "password": "1234",
-  "name": "Driver4",
-  "number": "551234564",
-  "number_plate": "D4567",
-  "available": true,
-  "alloted": false,
-  "departureTime": null,
-  "link": null
-},
-{
-  "_id": {
-    "$oid": "6619c445d1014c8ac53f4752"
+  {
+    "_id": {
+      "$oid": "6619c445d1014c8ac53f4752"
+    },
+    "username": "driver5",
+    "password": "1234",
+    "name": "Driver5",
+    "number": "551234565",
+    "number_plate": "E789",
+    "available": true,
+    "alloted": false,
+    "departureTime": null,
+    "link": null
   },
-  "username": "driver5",
-  "password": "1234",
-  "name": "Driver5",
-  "number": "551234565",
-  "number_plate": "E789",
-  "available": true,
-  "alloted": false,
-  "departureTime": null,
-  "link": null
-},
-{
-  "_id": {
-    "$oid": "6619c445d1014c8ac53f4753"
+  {
+    "_id": {
+      "$oid": "6619c445d1014c8ac53f4753"
+    },
+    "username": "driver6",
+    "password": "1234",
+    "name": "Driver6",
+    "number": "551234566",
+    "number_plate": "F3456",
+    "available": true,
+    "alloted": false,
+    "departureTime": null,
+    "link": null
   },
-  "username": "driver6",
-  "password": "1234",
-  "name": "Driver6",
-  "number": "551234566",
-  "number_plate": "F3456",
-  "available": true,
-  "alloted": false,
-  "departureTime": null,
-  "link": null
-},
-{
-  "_id": {
-    "$oid": "6619c445d1014c8ac53f4754"
-  },
-  "username": "driver7",
-  "password": "1234",
-  "name": "Driver7",
-  "number": "551234567",
-  "number_plate": "G987",
-  "available": true,
-  "alloted": false,
-  "departureTime": null,
-  "link": null
-}]
+  {
+    "_id": {
+      "$oid": "6619c445d1014c8ac53f4754"
+    },
+    "username": "driver7",
+    "password": "1234",
+    "name": "Driver7",
+    "number": "551234567",
+    "number_plate": "G987",
+    "available": true,
+    "alloted": false,
+    "departureTime": null,
+    "link": null
+  }
+]
