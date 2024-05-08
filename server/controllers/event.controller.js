@@ -82,7 +82,8 @@ const getEvent_POST = async (req, res) => {
     // Get the event from the database
     const event = await EventModel.findById(eventId)
       .populate("driver", "name phone")
-      .populate("bookedBy", "username");
+      .populate("bookedBy", "username")
+      .populate("students", "username");
 
     // Check if the does not exist
     if (!event) {
@@ -184,6 +185,14 @@ const getOpenEvents_GET = async (req, res) => {
 
     const openEvents = await EventModel.find({
       approved: true,
+      completed: false,
+    });
+
+    openEvents = openEvents.map((event) => {
+      return {
+        ...event,
+        registered: event.students.includes(student._id),
+      };
     });
 
     return res.status(200).json(openEvents);
@@ -193,6 +202,26 @@ const getOpenEvents_GET = async (req, res) => {
   }
 };
 
+const registerEvent_POST = async (req, res) => {
+  try {
+    const student = await getStudent(req);
+    const { eventId } = req.body;
+
+    const event = await EventModel.findById(eventId);
+    if (!event) {
+      return res.status(404).json("Event not found");
+    }
+
+    event.students.push(student._id);
+    await event.save();
+
+    return res.status(200).json("Event registered successfully");
+  } catch (error) {
+    console.log(error);
+    res.status(500).json("Error registering event");
+  }
+}
+
 export {
   book_POST,
   getAll_GET,
@@ -201,4 +230,5 @@ export {
   assignDriver_POST,
   completeEvent_POST,
   getOpenEvents_GET,
+  registerEvent_POST
 };

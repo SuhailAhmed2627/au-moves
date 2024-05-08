@@ -268,6 +268,7 @@ export {
   endRide_GET,
   login_POST,
   profile_GET,
+  completeEvent_GET,
   getDriverRides_GET,
   setDriverAvailability,
   getDriverStatus_GET,

@@ -87,7 +87,7 @@ function DriverAccount() {
           <h2>{getDriverStatusText(driverStatus)}</h2>
           {driverStatus.alloted && (
             <>
-              {driverStatus.available &&
+              {!driverStatus.available &&
                 (driverStatus.events ? (
                   <>
                     <h3>
@@ -106,7 +106,7 @@ function DriverAccount() {
                   </>
                 ))}
 
-              {!driverStatus.available && (
+              {!driverStatus.available && !driverStatus.events && (
                 <>
                   <button onClick={endRide}>End Ride</button>
                   <button onClick={() => navigate("/driverHome/studentList")}>

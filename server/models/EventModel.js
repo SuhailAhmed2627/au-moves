@@ -14,6 +14,11 @@ const EventSchema = new mongoose.Schema({
     ref: "drivers",
     default: null,
   },
+  students: {
+    type: [mongoose.Schema.Types.ObjectId],
+    ref: "students",
+    default: [],
+  }
 });
 const EventModel = mongoose.model("events", EventSchema);
 

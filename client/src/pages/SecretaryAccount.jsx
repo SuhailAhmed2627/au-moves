@@ -72,6 +72,11 @@ const SecretaryAccount = () => {
                 ? `Driver: ${event.driver.name}`
                 : "Driver not assigned"}
             </p>
+            <ol>
+              {event.students.map((student) => (
+                <li key={student.id}>{student.username}</li>
+              ))}
+            </ol>
           </div>
         ))}
       </div>

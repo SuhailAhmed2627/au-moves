@@ -2,6 +2,7 @@ import {
   endRide_GET,
   login_POST,
   profile_GET,
+  completeEvent_GET,
   getLink_GET,
   getDriverStatus_GET,
   getRidesData_GET,
@@ -50,6 +51,11 @@ const driverRoutes = (app) => {
     "/driver/getFree",
     [authMiddleware, adminCheckMiddleware],
     getFreeDrivers_GET,
+  );
+  app.get(
+    "/driver/completeEvent",
+    [authMiddleware, driverCheckMiddleware],
+    completeEvent_GET,
   );
 };
 

@@ -5,6 +5,7 @@ import {
   approveEvent_POST,
   assignDriver_POST,
   getOpenEvents_GET,
+  registerEvent_POST
 } from "../controllers/event.controller.js";
 import { authMiddleware } from "../middlewares/auth.js";
 import { studentCheckMiddleware } from "../middlewares/studentCheck.js";
@@ -22,6 +23,11 @@ const eventRoutes = (app) => {
     "/event/getEvent",
     [authMiddleware, adminCheckMiddleware],
     getEvent_POST,
+  );
+  app.post(
+    "/event/register",
+    [authMiddleware, studentCheckMiddleware],
+    registerEvent_POST,
   );
   app.post(
     "/event/approve",

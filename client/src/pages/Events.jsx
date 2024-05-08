@@ -23,6 +23,22 @@ const Events = () => {
     return <h2>Loading...</h2>;
   }
 
+  const registerEvent = async (eventId) => {
+    const token = localStorage.getItem("token");
+
+    const result = await axios.post(
+      "http://localhost:3000/event/register",
+      { eventId },
+      {
+        headers: { authorization: token },
+      },
+    );
+
+    if (result.status === 200) {
+      window.location.reload();
+    }
+  };
+
   return (
     <div>
       <h1>Open Events</h1>
@@ -30,6 +46,11 @@ const Events = () => {
         <div key={event.id} className="card">
           <h2>{event.event}</h2>
           <p>{new Date(event.time).toLocaleString()}</p>
+          {event.registered ? (
+            <p>Registered</p>
+          ) : (
+            <button onClick={() => registerEvent(event.id)}>Register</button>
+          )}
         </div>
       ))}
     </div>
